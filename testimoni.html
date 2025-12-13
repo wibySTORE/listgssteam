@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimoni Scroll</title>
+    <link rel="stylesheet" href="styletesti.css">
+
+    <canvas id="particles"></canvas>
+
+    <script>
+        /* ============================ */
+        /*  ANIMASI PARTIKEL LATAR BELAKANG  */
+        /* ============================ */
+
+        const canvas = document.getElementById("particles");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particlesArray = [];
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.color = "rgba(255, 255, 255, 0.7)";
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            }
+
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            for (let i = 0; i < 90; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particlesArray.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+
+        window.addEventListener("resize", () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initParticles();
+        });
+
+        /* ======================================= */
+        /*  PROTEKSI PENUH ANTI DOWNLOAD GAMBAR    */
+        /* ======================================= */
+
+        // Disable klik kanan khusus gambar
+        document.addEventListener("contextmenu", function (e) {
+            if (e.target.tagName === "IMG") e.preventDefault();
+        });
+
+        // Disable drag gambar
+        document.addEventListener("dragstart", function (e) {
+            if (e.target.tagName === "IMG") e.preventDefault();
+        });
+
+        // Disable klik-tahan HP (touch hold)
+        document.addEventListener("touchstart", function (e) {
+            if (e.target.tagName === "IMG") e.preventDefault();
+        }, { passive: false });
+
+        // Disable F12, CTRL+U, CTRL+S, CTRL+SHIFT+I dll
+        document.onkeydown = function (e) {
+            if (e.keyCode == 123) return false;
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 67) return false;
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 74) return false;
+            if (e.ctrlKey && e.keyCode == 85) return false;
+            if (e.ctrlKey && e.keyCode == 83) return false;
+        };
+
+// Disable klik kanan
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // Disable tombol Inspect Element
+    document.onkeydown = function(e) {
+        if (e.keyCode == 123) return false; // F12
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) return false;
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false;
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false; // CTRL+U
+        if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) return false; // CTRL+S
+    };
+
+    // Anti drag gambar
+    document.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+    });
+
+
+
+
+    </script>
+
+    <style>
+        /* Disable block, copy, select teks */
+        * {
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+
+        /* Proteksi gambar lebih kuat */
+        img {
+            pointer-events: none;
+            -webkit-user-drag: none;
+            user-drag: none;
+        }
+
+        
+* {
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+        <h2 class="judul">WELCOME TO MEMBER</h2>
+                    <!-- butoon bawah ini mah -->
+            <div class="nav-buttons">
+                <button onclick="window.location.href='list.html'">LIST MENU</button>
+                <button onclick="window.location.href='https://www.whatsapp.com/channel/0029VailYTWL7UVbHGSsjM2B'">SALURAN WA</button>
+            </div>
+        <div class="list-testimoni">
+
+                        <div class="card">
+                            <img src="img/WhatsApp Image 2025-12-06 at 00.13.23.jpeg">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+                        </div>
+
+                    
+                        <div class="card">
+                            <img src="img/WhatsApp Image 2025-12-06 at 00.13.24 (1).jpeg" alt="testimoni 2">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+                        </div>
+
+                    
+                        <div class="card">
+                            <img src="img/WhatsApp Image 2025-12-06 at 00.13.24 (2).jpeg" alt="testimoni 3">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+                        </div>
+
+                
+                            <div class="card">
+                            <img src="img/WhatsApp Image 2025-12-06 at 00.13.24.jpeg">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+                            </div>
+
+                    
+                            <div class="card">
+                            <img src="img/WhatsApp Image 2025-12-06 at 00.13.25 (1).jpeg">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+                            </div>
+
+
+            <div class="card">
+                <img src="img/WhatsApp Image 2025-12-06 at 00.13.25 (2).jpeg">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+
+            <div class="card">
+                <img src="img/WhatsApp Image 2025-12-06 at 00.13.25.jpeg">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+
+            <div class="card">
+                <img src="img/WhatsApp Image 2025-12-06 at 00.13.26 (1).jpeg">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+
+            <div class="card">
+                <img src="img/WhatsApp Image 2025-12-06 at 00.13.26 (2).jpeg">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+
+            <div class="card">
+                <img src="img/WhatsApp Image 2025-12-06 at 00.13.26.jpeg">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+
+            <div class="card">
+                <img src="img/74494136-7bee-4d0e-84cd-043813bfb51a.jpg">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+            <div class="card">
+                <img src="img/1.jpeg">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+
+            <div class="card">
+                <img src="img/2.jpeg">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+
+            <div class="card">
+                <img src="img/a.jpg">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+
+            <div class="card">
+                <img src="img/g.jpeg">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+
+            <div class="card">
+                <img src="img/h.jpeg">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+
+            <div class="card">
+                <img src="img/j.jpeg">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+
+            <div class="card">
+                <img src="img/k.jpeg">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+
+            <div class="card">
+                <img src="img/l.jpeg">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+
+            <div class="card">
+                <img src="img/sada.jpeg">
+                                <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                                <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+            <div class="card">
+                <img src="img/qer.jpeg">
+                    <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                    <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+                        <div class="card">
+                <img src="img/qw.jpeg">
+                    <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                    <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+                        <div class="card">
+                <img src="img/wq.jpeg">
+                    <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                    <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+                        <div class="card">
+                <img src="img/tyr.jpeg">
+                    <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                    <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+                        <div class="card">
+                <img src="img/qwea.jpeg">
+                    <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                    <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+                        <div class="card">
+                <img src="img/sfasf.jpeg">
+                    <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                    <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+                        <div class="card">
+                <img src="img/gdfg.jpeg">
+                    <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                    <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+                        <div class="card">
+                <img src="img/afvr.jpeg">
+                    <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                    <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+                        <div class="card">
+                <img src="img/yxfg.jpeg">
+                    <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                    <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+                        <div class="card">
+                <img src="img/6urs.jpeg">
+                    <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                    <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+                        <div class="card">
+                <img src="img/7td.jpeg">
+                    <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                    <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+                        <div class="card">
+                <img src="img/v34.jpeg">
+                    <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                    <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+                        <div class="card">
+                <img src="img/43b5.jpeg">
+                    <H3>GAMES SPEED SHOP TESTIMONI</H3>
+                    <p>Testimoni memuaskan!, Kualitas mantap efeknya langsung terasa 🔥</p>  
+            </div>
+
+            <!-- testi vidio dibawah -->
+
+            <div class="card vidio">
+                <video 
+                    src="img/testividio1.mp4" 
+                    controls 
+                    autoplay 
+                    muted 
+                    loop
+                    controlsList="nodownload"
+                    oncontextmenu="return false">
+                </video>
+
+                <h3>GAMES SPEED SHOP TESTIMONI</h3>
+                <p>Testimoni memuaskan! Kualitas mantap, efeknya langsung terasa 🔥</p>
+            </div>
+
+            <div class="card vidio">
+                <video 
+                    src="img/testividio2.mp4" 
+                    controls 
+                    autoplay 
+                    muted 
+                    loop
+                    controlsList="nodownload"
+                    oncontextmenu="return false">
+                </video>
+
+                <h3>GAMES SPEED SHOP TESTIMONI</h3>
+                <p>Testimoni memuaskan! Kualitas mantap, efeknya langsung terasa 🔥</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
