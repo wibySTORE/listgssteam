@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRODUK GSS TEAM</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- live chat -->
+    <script type="text/javascript">
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "1cdef2e3-a58b-41b0-9752-68707a1035b7";
+    (function () {
+    var d = document;
+    var s = d.createElement("script");
+    s.src = "https://client.crisp.chat/l.js";
+    s.async = 1;
+    d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+    </script>
+
+
 </head>
 <body>
 
@@ -20,9 +35,9 @@
 
             <!-- FLOATING LOGO + MENU -->
         <div class="floating-wrapper" aria-hidden="false">
-        <button id="fab" class="fab" aria-label="Menu GSS TEAM" aria-expanded="false">
+        <button id="fab" class="" aria-label="Menu GSS TEAM" aria-expanded="false">
             <!-- simple SVG logo -->
-            <img src="logo.jpg" class="fab-img">
+
         </button>
 
         <nav id="fabMenu" class="fab-menu" aria-hidden="true" role="menu" aria-label="Opsi GSS TEAM">
@@ -53,7 +68,14 @@
                         </div> 
 
                                                     <div class="nav-buttons">
-                    <button onclick="window.location.href='https://linktr.ee/gamesspeedshopp'">ORDER KLIK DISINI</button>
+                <button onclick="
+                $crisp.push(['do', 'chat:open']);
+                $crisp.push(['do', 'message:send', ['text', 'Halo, saya mau order juragan']]);
+                ">
+                ORDER KLIK DISINI
+                </button>
+
+
             </div>
 
                 <div class="nav-buttons">
