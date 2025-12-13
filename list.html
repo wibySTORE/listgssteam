@@ -8,94 +8,36 @@
 </head>
 <body>
 
+    <!-- live chat -->
+    <script type="text/javascript">
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "1cdef2e3-a58b-41b0-9752-68707a1035b7";
+    (function () {
+    var d = document;
+    var s = d.createElement("script");
+    s.src = "https://client.crisp.chat/l.js";
+    s.async = 1;
+    d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+    </script>
+
     <script src="script.js"></script>
 
             <!-- FLOATING LOGO + MENU -->
         <div class="floating-wrapper" aria-hidden="false">
-        <button id="fab" class="fab" aria-label="Menu GSS TEAM" aria-expanded="false">
+        <button id="fab" class="" aria-label="Menu GSS TEAM" aria-expanded="false">
             <!-- simple SVG logo -->
-            <img src="logo.jpg" class="fab-img">
+
         </button>
 
         <nav id="fabMenu" class="fab-menu" aria-hidden="true" role="menu" aria-label="Opsi GSS TEAM">
-            <!-- <button class="fab-item" data-action="buy" role="menuitem">🛒 Buy</button> -->
-            <button class="fab-item" data-action="wa" role="menuitem">🛒 Buy</button>
-            <button class="fab-item" data-action="saluran" role="menuitem">📩 Saluran WhatsApp</button>
-                        <button class="fab-item" data-action="music" role="menuitem">🎧 Putar / Jeda Musik</button>
-            <button class="fab-item" data-action="top" role="menuitem">⬆️ Ke Atas</button>
         </nav>
         </div>
     <!-- musik -->
-<audio id="bgm" src="Naruto Type Beat _Minato_ [ELOeBhDBVk4].mp3" autoplay loop></audio>
-
+<audio id="bgm"></audio>
     <canvas id="particles"></canvas>
 
-<h1 class="judul-gss">GSS TEAM</h1>
-
-
-<div class="container">
-    <h2>CONTOH FILE VIP</h2>
-
-<div class="item">
-    <h2>AIMLOCK</h2>
-    <div class="video-wrapper">
-        <video 
-            controls 
-            controlsList="nodownload" 
-            oncontextmenu="return false"
-        >
-            <source src="vidio/AIMLOCK TESTI.mp4" type="video/mp4">
-            Browser kamu tidak mendukung video.
-        </video>
-    </div>
-</div>
-
-
-<div class="item">
-    <h2>BODY LOCK</h2>
-    <div class="video-wrapper">
-        <video 
-            controls 
-            controlsList="nodownload" 
-            oncontextmenu="return false"
-        >
-            <source src="vidio/BODY LOCK.mp4" type="video/mp4">
-            Browser kamu tidak mendukung video.
-        </video>
-    </div>
-</div>
-
-<div class="item">
-    <h2>BODY HS</h2>
-    <div class="video-wrapper">
-        <video 
-            controls 
-            controlsList="nodownload" 
-            oncontextmenu="return false"
-        >
-            <source src="vidio/BODY HS.mp4" type="video/mp4">
-            Browser kamu tidak mendukung video.
-        </video>
-    </div>
-</div>
-
-<div class="item">
-    <h2>DRAG HS</h2>
-    <div class="video-wrapper">
-        <video 
-            controls 
-            controlsList="nodownload" 
-            oncontextmenu="return false"
-        >
-            <source src="vidio/drag hs.mp4" type="video/mp4">
-            Browser kamu tidak mendukung video.
-        </video>
-    </div>
-</div>
-
-</div>
-
-<h1 class="judul-gss">LIST FILE</h1>
+<h1 class="judul-gss">LIST MENU</h1>
 
 <!-- ================= CONFIG FIX LAG ================= -->
 <div class="container">
@@ -284,9 +226,8 @@
         </ul>
     </div>
 
-                        <div class="nav-buttons">
-            <button onclick="window.location.href='home.html'">HOME</button>
-            <button onclick="window.location.href='https://www.whatsapp.com/channel/0029VailYTWL7UVbHGSsjM2B'">SALURAN WA</button>
+                <div class="nav-buttons">
+            <button onclick="window.location.href='index.html'">HOME</button>
 
 </div>
 
