@@ -351,3 +351,13 @@
         transition: none !important;
     }
 }
+    .wa-red {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+    }
+
+    .wa-red:hover {
+    color: #ff4d4d;
+    text-decoration: underline;
+    }

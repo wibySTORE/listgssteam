@@ -16,7 +16,20 @@ body {
     padding: 20px;
     overflow-x: hidden;
     position: relative;
+
+    /* TAMBAHAN INI */
+    display: flex;
+    justify-content: center;   /* tengah horizontal */
+    align-items: flex-start;   /* mulai dari atas */
 }
+
+
+.main-wrapper {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
 
 /* ============================
         PARTIKEL BACKGROUND

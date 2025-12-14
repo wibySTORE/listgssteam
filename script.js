@@ -344,3 +344,71 @@
                                             }, 800); // match dengan CSS transition
                                         }, 700); // waktu sebelum fade-out mulai
                                     });
+
+
+
+window.addEventListener("load", function() {
+    // Tandai pertama kali load
+    if (!sessionStorage.getItem("loadedBefore")) {
+        sessionStorage.setItem("loadedBefore", "true");
+    }
+});
+
+// Fungsi menampilkan popup loading profesional
+function showLoadingPopup(message = "Halaman diperbarui otomatis...") {
+    // Cek apakah popup sudah ada
+    if (document.getElementById("auto-refresh-popup")) return;
+
+    const popup = document.createElement("div");
+    popup.id = "auto-refresh-popup";
+    popup.style.position = "fixed";
+    popup.style.top = 0;
+    popup.style.left = 0;
+    popup.style.width = "100%";
+    popup.style.height = "100%";
+    popup.style.background = "rgba(0,0,0,0.85)";
+    popup.style.display = "flex";
+    popup.style.flexDirection = "column";
+    popup.style.justifyContent = "center";
+    popup.style.alignItems = "center";
+    popup.style.zIndex = 9999;
+
+    // Konten popup
+    popup.innerHTML = `
+        <div class="loader"></div>
+        <p style="color: #fff; font-size: 1.2rem; margin-top: 20px;">${message}</p>
+    `;
+    document.body.appendChild(popup);
+
+    // Tambahkan style loader
+    const style = document.createElement("style");
+    style.innerHTML = `
+    .loader {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #4a00ff;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }`;
+    document.head.appendChild(style);
+}
+
+// Fungsi refresh halaman dengan delay
+function refreshPageWithPopup() {
+    showLoadingPopup();
+    setTimeout(function() {
+        location.reload();
+    }, 2000); // refresh setelah 2 detik
+}
+
+// Event detect user kembali ke tab
+document.addEventListener("visibilitychange", function() {
+    if (document.visibilityState === "visible") {
+        refreshPageWithPopup();
+    }
+});
