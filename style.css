@@ -361,3 +361,115 @@
     color: #ff4d4d;
     text-decoration: underline;
     }
+
+
+    /* tombol utama */
+.nav-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.nav-buttons .btn {
+    position: relative;
+    padding: 14px 26px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 14px;
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* efek kilau */
+.nav-buttons .btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.35),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.nav-buttons .btn:hover::before {
+    transform: translateX(100%);
+}
+
+.nav-buttons .btn:hover {
+    transform: translateY(-4px) scale(1.05);
+}
+
+.nav-buttons .btn span {
+    position: relative;
+    z-index: 2;
+}
+
+
+    .btn.wa {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+}
+.btn.wa:hover {
+    box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
+}
+
+.btn.tg {
+    background: linear-gradient(135deg, #229ED9, #0061a8);
+}
+.btn.tg:hover {
+    box-shadow: 0 0 25px rgba(34, 158, 217, 0.6);
+}
+
+.btn.fb {
+    background: linear-gradient(135deg, #1877F2, #0a3d91);
+}
+.btn.fb:hover {
+    box-shadow: 0 0 25px rgba(24, 119, 242, 0.6);
+}
+
+.nav-buttons .btn {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* jarak icon & teks */
+}
+
+/* ukuran icon */
+.nav-buttons .btn i {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+/* animasi icon saat hover */
+.nav-buttons .btn:hover i {
+    transform: scale(1.2) rotate(-5deg);
+}
+
+/* tombol crisp */
+.btn.crisp {
+    background: linear-gradient(135deg, #2f80ed, #56ccf2);
+}
+
+.btn.crisp:hover {
+    box-shadow: 0 0 25px rgba(86, 204, 242, 0.7);
+}
+
+/* icon crisp */
+.crisp-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.nav-buttons .btn:hover .crisp-icon {
+    transform: scale(1.15) rotate(-5deg);
+}
