@@ -412,3 +412,20 @@ document.addEventListener("visibilitychange", function() {
         refreshPageWithPopup();
     }
 });
+
+(function () {
+    // Cek apakah sudah pernah refresh di sesi ini
+    if (sessionStorage.getItem('alreadyRefreshed')) return;
+
+    // Fungsi refresh 1x
+    function refreshOnce() {
+        sessionStorage.setItem('alreadyRefreshed', 'true');
+        location.reload();
+    }
+
+    // Tangkap SEMUA klik di halaman
+    document.addEventListener('click', refreshOnce, { once: true });
+
+    // Opsional: tangkap sentuhan di HP
+    document.addEventListener('touchstart', refreshOnce, { once: true });
+})();
